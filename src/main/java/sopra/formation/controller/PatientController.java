@@ -40,7 +40,7 @@ public class PatientController {
 	@GetMapping("/patient/edit")
 	public String edit(@RequestParam("id") Long idPatient, Model model) {
 		// ETAPE 2
-		Patient patient = (Patient) patientRepo.findById(idPatient).get();
+		Patient patient = patientRepo.findPatientById(idPatient);
 
 		// ETAPE 3
 		model.addAttribute("prat", patient);
