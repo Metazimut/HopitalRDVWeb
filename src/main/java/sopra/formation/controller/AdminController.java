@@ -40,7 +40,7 @@ public class AdminController {
 	@GetMapping("/admin/edit")
 	public String edit(@RequestParam("id") Long idAdmin, Model model) {
 		// ETAPE 2
-		Admin admin = (Admin) adminRepo.findById(idAdmin).get();
+		Admin admin = adminRepo.findAdminById(idAdmin);
 
 		// ETAPE 3
 		model.addAttribute("prat", admin);
