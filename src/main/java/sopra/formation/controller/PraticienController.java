@@ -40,7 +40,7 @@ public class PraticienController {
 	@GetMapping("/praticien/edit")
 	public String edit(@RequestParam("id") Long idPraticien, Model model) {
 		// ETAPE 2
-		Praticien praticien = praticienRepo.findPraticienById(idPraticien).get();
+		Praticien praticien = praticienRepo.findPraticienById(idPraticien);
 
 		// ETAPE 3
 		model.addAttribute("prat", praticien);
