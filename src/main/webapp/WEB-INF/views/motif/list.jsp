@@ -11,6 +11,37 @@
 <link rel="stylesheet" href="<c:url value="/css/all.css"/>">
 </head>
 <body>
+
+
+
+<div class=" navbar navbar-expand-lg navbar-light">
+        <a href="http://www.google.fr" class="navbar-brand"><img class="logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/317354-200.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="praticien"> Praticien</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="patient"> Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin"> Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Filiere</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Formateur</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
@@ -20,7 +51,7 @@
 				<table id="motifTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
+							<th>Identifiant</th>
 							<th>Libelle</th>
 							<th>Duree</th>
 							<th></th>
@@ -37,7 +68,7 @@
 							<tr>
 								<td>${motif.id}</td>
 								<td>${motif.libelle}</td>
-								<td>${eval.duree}</td>
+								<td>${motif.duree}</td>
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>

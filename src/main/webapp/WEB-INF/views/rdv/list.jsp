@@ -2,16 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%-- ETAPE 5 --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Liste des praticiens</title>
+<title>Liste des RDV</title>
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/all.css"/>">
 </head>
 <body>
+
 
 
 <div class=" navbar navbar-expand-lg navbar-light">
@@ -40,42 +40,37 @@
         </div>
     </div>
 
-    		
-    		
-    		
+
+
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
-				<h2>Liste des praticiens</h2>
+				<h2>Liste des RDV</h2>
 			</div>
 			<div class="card-body">
-				<table id="praticienTable" class="table table-striped">
+				<table id="rdvTable" class="table table-striped">
 					<thead>
 						<tr>
 							<th>Identifiant</th>
-							<th>Nom</th>
-							<th>Prenom</th>
-							<th>Email</th>
-							<th>mdp</th>
 							<th>Lieu</th>
+							<th>dtRdv</th>
+							<th>status</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${mesPraticiens}" var="prat">
-							<c:url value="/praticien/edit" var="editUrl">
-								<c:param name="id" value="${prat.id}"/>
+						<c:forEach items="${mesRdv}" var="rdv">
+							<c:url value="/rdv/edit" var="editUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
-							<c:url value="/praticien/delete" var="deleteUrl">
-								<c:param name="id" value="${prat.id}"/>
+							<c:url value="/rdv/delete" var="deleteUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
 							<tr>
-								<td>${prat.id}</td>
-								<td>${prat.nom}</td>
-								<td>${prat.prenom}</td>
-								<td>${prat.email}</td>
-								<td>${prat.mdp}</td>
-								<td>${prat.lieu}</td>
+								<td>${rdv.id}</td>
+								<td>${rdv.lieu}</td>
+								<td>${rdv.dtRdv}</td>
+								<td>${rdv.status}</td>
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -85,7 +80,7 @@
 					</tbody>
 				</table>
 			</div>
-			<c:url value="praticien/add" var="addUrl"/>
+			<c:url value="/rdv/add" var="addUrl"/>
 			<div class="card-footer">
 				<a href="${addUrl}" class="btn btn-success btn-lg">
 					<i class="fa fa-plus"></i>
