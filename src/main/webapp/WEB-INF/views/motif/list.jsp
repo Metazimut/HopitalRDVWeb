@@ -13,12 +13,14 @@
 <body>
 
 
-
 <div class=" navbar navbar-expand-lg navbar-light">
-        <a href="http://www.google.fr" class="navbar-brand"><img class="logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/317354-200.png"></a>
+        <a href="https://jischinger.files.wordpress.com/2012/11/error404.jpg" class="embed-responsive-item"><img class="rounded img-fluid" src="https://i.skyrock.net/1839/50171839/pics/2233400185_1.jpg"  class="img-fluid" alt="img-responsive" style="width: 10%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
+         <a href="https://www.foot01.com/equipe/paris/accord-psg-messi-c-est-deja-boucle-384051" class="rounded img-fluid"><img class="rounded img-fluid" src="https://www.foot.fr/2372-large_default/magnet-logo-psg.jpg" class="img-fluid" alt="img-responsive" style="width: 30%"></a>
+ 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -40,8 +42,6 @@
         </div>
     </div>
 
-
-
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
@@ -51,7 +51,7 @@
 				<table id="motifTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th>id</th>
+							<th>Identifiant</th>
 							<th>Libelle</th>
 							<th>Duree</th>
 							<th></th>
@@ -68,7 +68,7 @@
 							<tr>
 								<td>${motif.id}</td>
 								<td>${motif.libelle}</td>
-								<td>${eval.duree}</td>
+								<td>${motif.duree}</td>
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>

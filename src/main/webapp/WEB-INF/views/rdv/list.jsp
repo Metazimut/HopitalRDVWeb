@@ -2,26 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%-- ETAPE 5 --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Liste des patients</title>
+<title>Liste des RDV</title>
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/all.css"/>">
 </head>
 <body>
 
 
+
 <div class=" navbar navbar-expand-lg navbar-light">
-        <a href="https://jischinger.files.wordpress.com/2012/11/error404.jpg" class="embed-responsive-item"><img class="rounded img-fluid" src="https://i.skyrock.net/1839/50171839/pics/2233400185_1.jpg"  class="img-fluid" alt="img-responsive" style="width: 10%"></a>
+        <a href="http://www.google.fr" class="navbar-brand"><img class="logo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/317354-200.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-         <a href="https://www.foot01.com/equipe/paris/accord-psg-messi-c-est-deja-boucle-384051" class="rounded img-fluid"><img class="rounded img-fluid" src="https://www.foot.fr/2372-large_default/magnet-logo-psg.jpg" class="img-fluid" alt="img-responsive" style="width: 30%"></a>
- 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -42,40 +39,38 @@
             </ul>
         </div>
     </div>
-    		
-    		
+
+
+
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
-				<h2>Liste des patients</h2>
+				<h2>Liste des RDV</h2>
 			</div>
 			<div class="card-body">
-				<table id="patientTable" class="table table-striped">
+				<table id="rdvTable" class="table table-striped">
 					<thead>
 						<tr>
 							<th>Identifiant</th>
-							<th>Nom</th>
-							<th>Prenom</th>
-							<th>Email</th>
-							<th>mdp</th>
+							<th>Lieu</th>
+							<th>dtRdv</th>
+							<th>status</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${mesPatients}" var="pat">
-							<c:url value="/patient/edit" var="editUrl">
-								<c:param name="id" value="${pat.id}"/>
+						<c:forEach items="${mesRdv}" var="rdv">
+							<c:url value="/rdv/edit" var="editUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
-							<c:url value="/patient/delete" var="deleteUrl">
-								<c:param name="id" value="${pat.id}"/>
+							<c:url value="/rdv/delete" var="deleteUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
 							<tr>
-								<td>${pat.id}</td>
-								<td>${pat.nom}</td>
-								<td>${pat.prenom}</td>
-								<td>${pat.email}</td>
-								<td>${pat.mdp}</td>
-							
+								<td>${rdv.id}</td>
+								<td>${rdv.lieu}</td>
+								<td>${rdv.dtRdv}</td>
+								<td>${rdv.status}</td>
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -85,7 +80,7 @@
 					</tbody>
 				</table>
 			</div>
-			<c:url value="patient/add" var="addUrl"/>
+			<c:url value="/rdv/add" var="addUrl"/>
 			<div class="card-footer">
 				<a href="${addUrl}" class="btn btn-success btn-lg">
 					<i class="fa fa-plus"></i>
