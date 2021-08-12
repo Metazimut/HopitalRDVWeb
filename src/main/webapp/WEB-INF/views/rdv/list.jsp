@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Liste des motifs</title>
+<title>Liste des RDV</title>
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/all.css"/>">
 </head>
@@ -45,30 +45,32 @@
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
-				<h2>Liste des motifs</h2>
+				<h2>Liste des RDV</h2>
 			</div>
 			<div class="card-body">
-				<table id="motifTable" class="table table-striped">
+				<table id="rdvTable" class="table table-striped">
 					<thead>
 						<tr>
 							<th>Identifiant</th>
-							<th>Libelle</th>
-							<th>Duree</th>
+							<th>Lieu</th>
+							<th>dtRdv</th>
+							<th>status</th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${mesMotifs}" var="motif">
-							<c:url value="/motif/edit" var="editUrl">
-								<c:param name="id" value="${motif.id}"/>
+						<c:forEach items="${mesRdv}" var="rdv">
+							<c:url value="/rdv/edit" var="editUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
-							<c:url value="/motif/delete" var="deleteUrl">
-								<c:param name="id" value="${motif.id}"/>
+							<c:url value="/rdv/delete" var="deleteUrl">
+								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
 							<tr>
-								<td>${motif.id}</td>
-								<td>${motif.libelle}</td>
-								<td>${motif.duree}</td>
+								<td>${rdv.id}</td>
+								<td>${rdv.lieu}</td>
+								<td>${rdv.dtRdv}</td>
+								<td>${rdv.status}</td>
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -78,7 +80,7 @@
 					</tbody>
 				</table>
 			</div>
-			<c:url value="/motif/add" var="addUrl"/>
+			<c:url value="/rdv/add" var="addUrl"/>
 			<div class="card-footer">
 				<a href="${addUrl}" class="btn btn-success btn-lg">
 					<i class="fa fa-plus"></i>
