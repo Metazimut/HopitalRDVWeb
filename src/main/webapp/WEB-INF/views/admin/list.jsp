@@ -43,89 +43,76 @@
         </div>
     </div>
 
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" /> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-<!-- <div class="container"> -->
-<!--   <form> -->
-<!--     <fieldset> -->
-<!--       <input id="oCategorieValeur" name="oCategorieValeur" type="hidden" value="0" /> -->
-<!--       <div class="input-group"> -->
-<!--         <div class="input-group-prepend"> -->
-<!--           <button id="oCategorie" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégorie</button> -->
-<!--           <div id="oCategorieListe" class="dropdown-menu"> -->
-<!--             <a class="dropdown-item" data-valeur="0" href="#">Praticien</a> -->
-<!--             <a class="dropdown-item" data-valeur="1" href="#">Patient</a> -->
-<!--              <a class="dropdown-item" data-valeur="2" href="#">Admin</a> -->
-<!--           </div> -->
-<!--         </div> -->
-<!--         <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" placeholder="Recherche" required="required"> -->
-<!--         <div class="input-group-append"> -->
-<!--           <button class="btn btn-primary" type="submit">Recherche</button> -->
-<!--         </div> -->
-<!--       </div> -->
-<!--     </fieldset>  -->
-<!--   </form> -->
-<!-- </div> -->
-
-
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      <div class="recherche_p">
-        <form class="form-inline my-2 my-lg-0">
-          <div class="recherche-barr">
-            <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search">
-            <a href="#" class="recherche-icone">
-              <i class="fas fa-search"></i>
-            </a>
+<div class="container">
+  <form>
+    <fieldset>
+      <input id="oCategorieValeur" name="oCategorieValeur" type="hidden" value="0" />
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button id="oCategorie" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégorie</button>
+          <div id="oCategorieListe" class="dropdown-menu">
+            <a class="dropdown-item" data-valeur="0" href="#">Praticien</a>
+            <a class="dropdown-item" data-valeur="1" href="#">Patient</a>
+             <a class="dropdown-item" data-valeur="2" href="#">Admin</a>
           </div>
-        </form>
+        </div>
+        <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" placeholder="Recherche" required="required">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">Recherche</button>
+        </div>
       </div>
-      </div>
-    </nav>
+    </fieldset> 
+  </form>
+</div>
+
+
+<!--  <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<!--       <a class="navbar-brand" href="#">Navbar</a> -->
+<!--       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+<!--         <span class="navbar-toggler-icon"></span> -->
+<!--       </button> -->
+
+<!--       <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+<!--         <ul class="navbar-nav mr-auto"> -->
+<!--           <li class="nav-item active"> -->
+<!--             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+<!--           </li> -->
+<!--           <li class="nav-item"> -->
+<!--             <a class="nav-link" href="#">Link</a> -->
+<!--           </li> -->
+<!--           <li class="nav-item dropdown"> -->
+<!--             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+<!--               Dropdown -->
+<!--             </a> -->
+<!--             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+<!--               <a class="dropdown-item" href="#">Action</a> -->
+<!--               <a class="dropdown-item" href="#">Another action</a> -->
+<!--               <div class="dropdown-divider"></div> -->
+<!--               <a class="dropdown-item" href="#">Something else here</a> -->
+<!--             </div> -->
+<!--           </li> -->
+<!--           <li class="nav-item"> -->
+<!--             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+<!--           </li> -->
+<!--         </ul> -->
+<!--       <div class="recherche_p"> -->
+<!--         <form class="form-inline my-2 my-lg-0"> -->
+<!--           <div class="recherche-barr"> -->
+<!--             <input class="recherche-input" type="search" placeholder="Recherche" aria-label="Search"> -->
+<!--             <a href="#" class="recherche-icone"> -->
+<!--               <i class="fas fa-search"></i> -->
+<!--             </a> -->
+<!--           </div> -->
+<!--         </form> -->
+<!--       </div> -->
+<!--       </div> -->
+<!--     </nav> -->
     
     
     
-<script>
-$(document).ready(function(e){
-  // Boucler tous les hyperliens de la liste « oCategorieListe »
-  // Et capturer le l’événement « click »
-  $('#oCategorieListe').find('a').click(function(e) {
-    // Prévenir une action
-    e.preventDefault();
-    // Changer l’étiquette (label) de la liste pour le contenu du lien
-    $('#oCategorie').html($(this).html());
-    // Assigner la valeur de l’attribut « data-valeur » à l’élément caché (hidden) du formulaire « oCategorieValeur »
-    $('#oCategorieValeur').val($(this).attr("data-valeur"));
-  });
-});
-</script>
+
 
 
 	
