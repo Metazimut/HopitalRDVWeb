@@ -59,7 +59,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${mesRdv}" var="rdv">
+						<c:forEach items="${mesRdvs}" var="rdv">
 							<c:url value="/rdv/edit" var="editUrl">
 								<c:param name="id" value="${rdv.id}"/>
 							</c:url>
