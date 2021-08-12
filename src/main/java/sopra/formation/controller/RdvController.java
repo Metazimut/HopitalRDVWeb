@@ -19,16 +19,15 @@ import sopra.formation.repository.custom.IRdvRepository;
 @Controller
 public class RdvController {
 
-	
 	@Autowired
 	private IRdvRepository rdvRepo;
 
 	@GetMapping("/rdv")
 	public String list(Model model) {
 		
-		List<Rdv> rdv = this.rdvRepo.findAll();
+		List<Rdv> rdvs = this.rdvRepo.findAll();
 
-		model.addAttribute("MesRdv", rdv);
+		model.addAttribute("mesRdvs", rdvs);
 
 		return "rdv/list";
 	}
