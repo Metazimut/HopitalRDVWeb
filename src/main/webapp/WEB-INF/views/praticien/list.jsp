@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/formation-web-spring-eric/matiere"> Matiere</a>
+                    <a class="nav-link" href="praticien"> Praticien</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8080/formation-web-spring-eric/praticien"> Praticien</a>
+                    <a class="nav-link" href="patient"> Patient</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=""> Stagiaire</a>
+                    <a class="nav-link" href="admin"> Admin</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"> Filiere</a>
