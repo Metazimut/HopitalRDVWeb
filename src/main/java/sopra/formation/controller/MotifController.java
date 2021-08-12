@@ -24,7 +24,7 @@ public class MotifController {
 
 		List<Motif> motifs = this.motifRepo.findAll();
 
-		model.addAttribute("mesmotifs", motifs);
+		model.addAttribute("mesMotifs", motifs);
 
 		return "motif/list";
 	}
@@ -39,14 +39,14 @@ public class MotifController {
 	public String edit(@RequestParam("id") Long idMotif, Model model) {
 		Motif motif = motifRepo.findById(idMotif).get();
 
-		model.addAttribute("eval", motif);
+		model.addAttribute("motif", motif);
 
 		return "motif/form";
 	}
 
 	@PostMapping("/motif/save")
-	public String save(@RequestParam(required = false) Long id, @RequestParam(required = false, defaultValue = "0") int version, @RequestParam String libelle, @RequestParam double duree) {
-		Motif motif = new Motif(id, version, libelle, duree);
+	public String save(@RequestParam(required = false) Long id, @RequestParam(required = false, defaultValue = "0") int version, @RequestParam String libelle, @RequestParam Integer duree) {
+		Motif motif = new Motif(id, libelle, duree);
 
 		motif.setVersion(version);
 		
