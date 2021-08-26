@@ -7,12 +7,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
+ 
+<!--  Pour la barre de recherche -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <title>Liste des patients</title>
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/all.css"/>">
 </head>
 <body>
 
+
+<style>
+m { margin:60px }
+mm { margin:10px }
+</style>
 
 <div class=" navbar navbar-expand-lg navbar-light">
         <a href="https://jischinger.files.wordpress.com/2012/11/error404.jpg" class="embed-responsive-item"><img class="rounded img-fluid" src="https://i.skyrock.net/1839/50171839/pics/2233400185_1.jpg"  class="img-fluid" alt="img-responsive" style="width: 10%"></a>
@@ -43,14 +56,24 @@
         </div>
     </div>
     		
+   
     		
 	<div class="container-fluid">
 		<div class="card mt-3">
 			<div class="card-header bg-info text-white">
 				<h2>Liste des patients</h2>
 			</div>
-			<div class="card-body">
-				<table id="patientTable" class="table table-striped">
+			<p><div>
+	<mm></mm>	<label>NOM 		:  <mm></mm>		</label><input id="filtrenom" type="text" required >
+
+<m>			
+</m>
+
+<!-- 		<label>LIEU 	:  	<mm></mm>	</label><input id="filtrelieu" type="text" required> -->
+</div></p>
+
+
+ 			<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th>Identifiant</th>
@@ -61,7 +84,7 @@
 							<th></th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="myTable">
 						<c:forEach items="${mesPatients}" var="pat">
 							<c:url value="/patient/edit" var="editUrl">
 								<c:param name="id" value="${pat.id}"/>
@@ -75,7 +98,6 @@
 								<td>${pat.prenom}</td>
 								<td>${pat.email}</td>
 								<td>${pat.mdp}</td>
-							
 								<td><div class="btn-group btn-group-sm">
 									<a href="${editUrl}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 									<a href="${deleteUrl}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -84,7 +106,29 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
+				</div>
+				
+			<script>
+			
+			$(document).ready(function () {
+			      $("#filtrenom").keyup(function(){
+			           var reg = new RegExp($("#filtrenom").val());
+			           $(".table-bordered tbody tr")
+			           .each(function(i, item){
+			              $(item)
+			              .css("display", $(item)
+			              .children('td:eq(1)')            			 //  	  En fonction du "nom" 2eme colonne
+			              .text().toLowerCase().match(reg) ? '' : 'none' );
+			             
+			            });
+			      });
+			});
+			
+		
+			
+		
+			</script>
+
 			<c:url value="patient/add" var="addUrl"/>
 			<div class="card-footer">
 				<a href="${addUrl}" class="btn btn-success btn-lg">
